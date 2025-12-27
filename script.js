@@ -1,3 +1,14 @@
+// Preloader
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  setTimeout(() => {
+    preloader.classList.add("hide");
+  }, 3200);
+});
+
+// Fading affect
 const faders = document.querySelectorAll(".fade-in");
 
 const observer = new IntersectionObserver(
@@ -13,6 +24,7 @@ const observer = new IntersectionObserver(
 
 faders.forEach(el => observer.observe(el));
 
+// Menu for mobile
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 

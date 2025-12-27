@@ -23,6 +23,19 @@ body.menu-open {
   overflow: hidden;
 }
 
+#home {
+  padding-top: 3.5rem;
+  scroll-margin-top: 100px;
+}
+
+#services,
+#about,
+#experience,
+#testimonials,
+#contact {
+  scroll-margin-top: 100px;
+}
+
 /* =========================
    NAVBAR
 ========================= */
@@ -33,10 +46,12 @@ body.menu-open {
   z-index: 1000;
   background: #ffffff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 4rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  justify-content: space-between;
+  padding: 1.2rem 3rem; 
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
+  /* box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); */
 }
 
 .menu-toggle {
@@ -112,6 +127,36 @@ body.menu-open {
   }
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 28px;
+  }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.logo-link:hover {
+  color: inherit;
+}
 
 /* =========================
    SECTIONS
@@ -144,6 +189,11 @@ body.menu-open {
   font-size: 1rem;
   margin-bottom: 1.2rem;
   color: #444;
+}
+
+#home.section {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 /* =========================
@@ -357,5 +407,46 @@ body.menu-open {
 
   .section h2 {
     font-size: 1.7rem;
+  }
+}
+
+/* =========================
+   PRELOADER
+========================= */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #f8f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: all;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo img {
+  width: 90px;
+  animation: logoReveal 3.4s ease forwards;
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
