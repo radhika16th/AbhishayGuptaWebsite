@@ -64,6 +64,23 @@ body.menu-open {
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 3rem; 
+
+  /* animation */
+  animation: navbarFade 7.5s ease-out forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+@keyframes navbarFade {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar.scrolled {
+  padding: 0.6rem 3rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
 }
 
 .menu-toggle {
