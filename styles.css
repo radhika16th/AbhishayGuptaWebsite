@@ -1,4 +1,17 @@
 /* =========================
+   COLOURS
+========================= */
+
+:root {
+  --navy: #0F2A4D;
+  --gold: #C9A24D;
+  --white: #FFFFFF;
+  --light-bg: #F6F7F9;
+  --text-dark: #1a1a1a;
+  --text-muted: #444;
+}
+
+/* =========================
    GLOBAL RESET & BASE
 ========================= */
 
@@ -14,10 +27,11 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fb;
-  color: #1a1a1a;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
   line-height: 1.6;
 }
+
 
 body.menu-open {
   overflow: hidden;
@@ -44,14 +58,12 @@ body.menu-open {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 3rem; 
-  /* padding-top: 30px;
-  padding-bottom: 30px; */
-  /* box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); */
 }
 
 .menu-toggle {
@@ -74,13 +86,13 @@ body.menu-open {
 
 .nav-links a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text-dark);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #c9a24d;
+  color: var(--gold);
 }
 
 @media (max-width: 768px) {
@@ -106,7 +118,7 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: #ffffff;
+    background: var(--light-bg);
 
     display: none !important;
     flex-direction: column;
@@ -151,7 +163,7 @@ body.menu-open {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .logo-link:hover {
@@ -169,16 +181,18 @@ body.menu-open {
 }
 
 .light {
-  background-color: #f8f9fb;
+  background-color: var(--light-bg);
 }
 
 .section h1 {
+  color: var(--navy);
   font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
 }
 
 .section h2 {
+  color: var(--navy);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -188,7 +202,7 @@ body.menu-open {
   max-width: 800px;
   font-size: 1rem;
   margin-bottom: 1.2rem;
-  color: #444;
+  color: var(--text-muted);
 }
 
 #home.section {
@@ -204,8 +218,8 @@ body.menu-open {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.9rem 1.8rem;
-  background: #1a1a1a;
-  color: #ffffff;
+  background: var(--navy);
+  color: var(--white);
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
@@ -213,7 +227,7 @@ body.menu-open {
 }
 
 .btn-primary:hover {
-  background: #c9a24d;
+  background: var(--gold);
   transform: translateY(-2px);
 }
 
@@ -228,10 +242,10 @@ body.menu-open {
 }
 
 .card {
-  background: #ffffff;
+  background: var(--white);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(15, 42, 77, 0.06);
   transition: transform 0.3s ease;
 }
 
@@ -247,7 +261,7 @@ body.menu-open {
 
 .card p {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-muted);
 }
 
 /* =========================
@@ -277,17 +291,17 @@ body.menu-open {
 }
 
 .testimonial {
-  background: #ffffff;
+  background: var(--white);;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(15, 42, 77, 0.06);
   position: relative;
 }
 
 .testimonial::before {
   content: "“";
   font-size: 4rem;
-  color: #c9a24d;
+  color: var(--gold);
   position: absolute;
   top: -15px;
   left: 15px;
@@ -295,14 +309,14 @@ body.menu-open {
 
 .testimonial p {
   font-size: 0.95rem;
-  color: #333;
+  color: var(--text-muted);
 }
 
 .testimonial span {
   display: block;
   margin-top: 1rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 /* =========================
@@ -320,7 +334,7 @@ body.menu-open {
 .contact-form textarea {
   padding: 0.8rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--light-bg);
   font-family: inherit;
   font-size: 0.95rem;
 }
@@ -343,7 +357,7 @@ body.menu-open {
 .footer {
   text-align: center;
   padding: 2.5rem 1rem;
-  background: #ffffff;
+  background: var(--white);
 }
 
 .footer-icons {
@@ -354,18 +368,18 @@ body.menu-open {
 }
 
 .footer-icons a {
-  color: #1a1a1a;
+  color: var(--navy);;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .footer-icons a:hover {
-  color: #c9a24d;
+  color: var(--gold);
   transform: translateY(-2px);
 }
 
 .footer p {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--text-muted);
 }
 
 
@@ -417,7 +431,7 @@ body.menu-open {
 #preloader {
   position: fixed;
   inset: 0;
-  background: #f8f9fb;
+  background: var(--light-bg);
   display: flex;
   align-items: center;
   justify-content: center;
